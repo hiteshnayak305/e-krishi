@@ -2,7 +2,7 @@ var Product = require('../models/product');
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/shopping');
+mongoose.connect('mongodb://hiteshnayak305:hn4nov96@ds115749.mlab.com:15749/ekrishi');
 
 var products = [
     new Product({
@@ -52,9 +52,7 @@ for (var i = 0; i < products.length; i++) {
         done++;    
     });
 }
-if (done == products.length) {
+
+if(done==products.length){
     exit();
-}
-function exit() {
-    mongoose.disconnect();
 }

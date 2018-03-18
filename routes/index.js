@@ -8,6 +8,20 @@ var Order = require('../models/order');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     var successMsg = req.flash('success')[0];
+    if(req.query.search){
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        //console.log(regex)
+        //console.log(req.query.search)
+        Product.find({title:regex}, function (err, docs) {
+        var productChunks = [];
+        var chunkSize = 3;
+        for (var i = 0; i < docs.length; i += chunkSize) {
+            productChunks.push(docs.slice(i, i + chunkSize));
+        }
+        res.render('shop/index', {title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg});
+    });
+    }
+    else{
     Product.find(function (err, docs) {
         var productChunks = [];
         var chunkSize = 3;
@@ -16,11 +30,12 @@ router.get('/', function (req, res, next) {
         }
         res.render('shop/index', {title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg});
     });
+}
 });
 
 router.get('/home', function(req,res,next){
     res.render('shop/home', {layout:false});
-})
+});
 
 router.get('/add-to-cart/:id', function(req, res, next) {
     var productId = req.params.id;
@@ -115,4 +130,8 @@ function isLoggedIn(req, res, next) {
     }
     req.session.oldUrl = req.url;
     res.redirect('/user/signin');
+}
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 }
