@@ -7,6 +7,10 @@ var Order = require('../models/order');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+    res.render('shop/home', {layout:false});
+});
+
+router.get('/home', function(req,res,next){
     var successMsg = req.flash('success')[0];
     if(req.query.search){
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
@@ -31,10 +35,6 @@ router.get('/', function (req, res, next) {
         res.render('shop/index', {title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg});
     });
 }
-});
-
-router.get('/home', function(req,res,next){
-    res.render('shop/home', {layout:false});
 });
 
 router.get('/add-to-cart/:id', function(req, res, next) {

@@ -7,37 +7,37 @@ mongoose.connect('mongodb://hiteshnayak305:hn4nov96@ds161346.mlab.com:61346/pira
 var products = [
     new Product({
     imageURL: 'https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-250x250.jpg',
-    title: 'Farming Tool 1',
+    title: 'Handle',
     description: 'a tool for making soil level and removing leaves from the ground, consisting of a long handle with sharp separated points on one end that the soil etc is caught in',
     price: 1500
 }),
     new Product({
     imageURL: 'https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-250x250.jpg',
-    title: 'Farming Tool 2',
+    title: 'Shoue',
     description: 'a tool for making soil level and removing leaves from the ground, consisting of a long handle with sharp separated points on one end that the soil etc is caught in',
     price: 1500
 }),
     new Product({
     imageURL: 'https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-250x250.jpg',
-    title: 'Farming Tool 3',
+    title: 'Woodenplank',
     description: 'a tool for making soil level and removing leaves from the ground, consisting of a long handle with sharp separated points on one end that the soil etc is caught in',
     price: 1500
 }),
     new Product({
     imageURL: 'https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-250x250.jpg',
-    title: 'Farming Tool 4',
+    title: 'Plough',
     description: 'a tool for making soil level and removing leaves from the ground, consisting of a long handle with sharp separated points on one end that the soil etc is caught in',
     price: 1500
 }),
     new Product({
     imageURL: 'https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-250x250.jpg',
-    title: 'Farming Tool 5',
+    title: 'Shovel',
     description: 'a tool for making soil level and removing leaves from the ground, consisting of a long handle with sharp separated points on one end that the soil etc is caught in',
     price: 1500
 }),
     new Product({
     imageURL: 'https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-250x250.jpg',
-    title: 'Farming Tool 6',
+    title: 'Tiller',
     description: 'a tool for making soil level and removing leaves from the ground, consisting of a long handle with sharp separated points on one end that the soil etc is caught in',
     price: 1500
 })
